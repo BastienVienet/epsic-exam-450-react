@@ -18,7 +18,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm run test --watchAll --passWithNoTests
+        run: npm run test
 
       - name: Build
         run: npm run build
