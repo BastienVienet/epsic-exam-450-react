@@ -19,5 +19,4 @@
 | Branche  | Tâche |
 | ------- | ------- |
 | [`epsic-exam-450-react/main`](https://github.com/BastienVienet/epsic-exam-450-react/tree/main) | [![Tests](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml) |
-| ------- | ------- |
 | [`epsic-exam-450-react/main`](https://github.com/BastienVienet/epsic-exam-450-react/tree/main) | [![Build](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/build.yml) |
