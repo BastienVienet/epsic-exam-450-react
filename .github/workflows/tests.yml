@@ -1,4 +1,4 @@
-name: To-Do List CI/CD
+name: Tests
 
 on:
   push:
@@ -19,16 +19,3 @@ jobs:
 
       - name: Run tests
         run: npm run test
-        
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-        
-      - name: Build
-        run: npm run build
