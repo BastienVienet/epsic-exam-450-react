@@ -14,3 +14,8 @@
 1. Cloner le projet
 2. Installer les dépendances avec `npm install`
 3. Lancer le projet avec `npm start`
+
+## Statut des workflows
+| Branche  | Tâche |
+| ------- | ------- |
+| [`epsic-exam-450-react/main`](https://github.com/BastienVienet/epsic-exam-450-react/tree/main) | [![To-Do List CI/CD](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml) |
