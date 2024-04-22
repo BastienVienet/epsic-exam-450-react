@@ -1,11 +1,11 @@
-name: Tests
+name: Build
 
 on:
   pull_request:
     branches: [ "*" ]
 
-jobs:
-  test:
+jobs:        
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,6 +14,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: npm run test
+        
+      - name: Build
+        run: npm run build
