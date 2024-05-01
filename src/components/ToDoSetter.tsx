@@ -17,6 +17,7 @@ export const ToDoSetter = ({ onAdd, input, setInput }: Props) => {
   return (
     <>
       <StyledInput
+        aria-label="Add todo"
         onKeyDown={handleEnterPress}
         type="text"
         value={input}

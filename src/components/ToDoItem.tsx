@@ -50,6 +50,7 @@ export const ToDoItem = ({
   return isEditing ? (
     <StyledListItem>
       <MyInput
+        aria-label="Edit todo"
         ref={inputTextRef}
         type="text"
         defaultValue={todo.text}
@@ -57,6 +58,7 @@ export const ToDoItem = ({
       />
       <div className="ml-auto">
         <StyledButton
+          aria-label="save"
           onClick={() => {
             if (!inputTextRef.current) return;
             onEdit(todo.id, inputTextRef.current.value);
@@ -65,7 +67,10 @@ export const ToDoItem = ({
         >
           <MdSave></MdSave>
         </StyledButton>
-        <StyledButton onClick={() => setIsEditing(false)}>
+        <StyledButton
+          aria-label="cancel edit"
+          onClick={() => setIsEditing(false)}
+        >
           <MdCancel></MdCancel>
         </StyledButton>
       </div>
@@ -84,9 +89,9 @@ export const ToDoItem = ({
       </label>
       <div className="ml-auto">
         <StyledButton onClick={() => onDelete(todo.id)}>
-          <MdDelete></MdDelete>
+          <MdDelete aria-label="delete"></MdDelete>
         </StyledButton>
-        <StyledButton onClick={() => setIsEditing(true)}>
+        <StyledButton aria-label="edit" onClick={() => setIsEditing(true)}>
           <MdEdit></MdEdit>
         </StyledButton>
       </div>
