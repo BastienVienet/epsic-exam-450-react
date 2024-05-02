@@ -11,7 +11,7 @@ import { App } from "../App";
 
 describe("Integration tests for App component", () => {
   // Test #2 : Integration test for adding a todo and updating it
-  it("should add a todo and update the it", async () => {
+  it("should add a todo and update it", async () => {
     // Arrange: Render the component
     render(<App />);
 
