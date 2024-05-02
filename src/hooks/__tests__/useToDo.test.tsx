@@ -7,44 +7,51 @@ const mockTodos = [
   { id: 2, text: "Prendre des vacances", completed: false },
 ];
 
-// Unit Test
-it("should add a new todo to the todo list", () => {
-  // Arrange: Set up the mock function and the props for the hook
-  const spy = jest.fn();
-  const props = {
-    setToDoList: spy,
-    toDoList: mockTodos,
-    setInput: () => {},
+describe("Unit tests for useToDo hook", () => {
+  // Variables to store the mock function and the props for the hook
+  let spy;
+  let props;
+
+  // Before each test, set up the mock function and the props for the hook
+  beforeEach(() => {
+    // Arrange: Set up the mock function and the props for the hook
+    spy = jest.fn();
+    props = {
+      setToDoList: spy,
+      toDoList: mockTodos,
+      setInput: () => {},
+    };
+  });
+
+  // Helper function to render the hook
+  const renderUseToDo = () => {
+    const { result } = renderHook(() => useToDo(props));
+    return result.current;
   };
 
-  // Act: Render the hook and call the addToDo function
-  const { result } = renderHook(() => useToDo(props));
-  result.current.addToDo("Ajouter une nouvelle tâche");
+  // Test #1 : Unit test addToDo
+  it("should add a new todo to the todo list", () => {
+    // Act: Render the hook and call the addToDo function
+    const { addToDo } = renderUseToDo();
+    addToDo("Ajouter une nouvelle tâche");
 
-  // Assert: Check that the setToDoList function was called with the correct arguments
-  expect(spy).toHaveBeenCalledWith([
-    { id: 1, text: "Terminer le module 450", completed: true },
-    { id: 2, text: "Prendre des vacances", completed: false },
-    { id: expect.any(Number), text: "Ajouter une nouvelle tâche", completed: false },
-  ]);
-});
+    // Assert: Check that the setToDoList function was called with the correct arguments
+    expect(spy).toHaveBeenCalledWith([
+      { id: 1, text: "Terminer le module 450", completed: true },
+      { id: 2, text: "Prendre des vacances", completed: false },
+      { id: expect.any(Number), text: "Ajouter une nouvelle tâche", completed: false },
+    ]);
+  });
 
-// Unit Test
-it("should delete a todo from the todo list", () => {
-  // Arrange: Set up the mock function and the props for the hook
-  const spy = jest.fn();
-  const props = {
-    setToDoList: spy,
-    toDoList: mockTodos,
-    setInput: () => {},
-  };
+  // Test #3 : Unit test deleteToDo
+  it("should delete a todo from the todo list", () => {
+    // Act: Render the hook and call the deleteToDo function
+    const { deleteToDo } = renderUseToDo();
+    deleteToDo(1);
 
-  // Act: Render the hook and call the deleteToDo function
-  const { result } = renderHook(() => useToDo(props));
-  result.current.deleteToDo(1);
-
-  // Assert: Check that the setToDoList function was called with the correct arguments
-  expect(spy).toHaveBeenCalledWith([
-    { id: 2, text: "Prendre des vacances", completed: false },
-  ]);
+    // Assert: Check that the setToDoList function was called with the correct arguments
+    expect(spy).toHaveBeenCalledWith([
+      { id: 2, text: "Prendre des vacances", completed: false },
+    ]);
+  });
 });
