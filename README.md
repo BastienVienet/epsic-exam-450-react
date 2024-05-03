@@ -16,6 +16,11 @@
 3. Lancer le projet avec `npm start`
 
 ## Statut des workflows
+Pour tester notre application il suffit de lancer les commandes suivantes :
+- `npm run build` pour builder l'application
+- `npm run test` pour lancer tous les tests de notre application
+
+### Résultat du build et des tests
 | Branche  | Tâche |
 | ------- | ------- |
 | [`main`](https://github.com/BastienVienet/epsic-exam-450-react/tree/main) | [![Tests](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/BastienVienet/epsic-exam-450-react/actions/workflows/tests.yml) |
